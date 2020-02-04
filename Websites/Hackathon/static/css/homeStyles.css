@@ -1,0 +1,11 @@
+body
+{
+    background-image: url("../img/homeBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h3
+{
+    color: white; 
+}
