@@ -4,7 +4,7 @@ var dealerSum = 0;
 var playerCard1 = 0;
 var playerCard2 = 0;
 var cardReturn;
-var cash = 5;
+var cash = 50;
 var round_over = false;
 
 let card_value_map = new Map();
