@@ -4,7 +4,7 @@ var dealerSum = 0;
 var playerCard1 = 0;
 var playerCard2 = 0;
 var cardReturn;
-var cash = 50;
+var cash = 5;
 var round_over = false;
 
 let card_value_map = new Map();
@@ -39,8 +39,8 @@ window.onload = function()
             {
                 cash+=5; document.getElementById("cash").innerHTML = cash;
                 
-                document.getElementById("prompt").innerHTML = "you won";
-                document.getElementById("prompt").setAttribute("style","color:cyan");
+                // document.getElementById("prompt").innerHTML = "you won";
+                // document.getElementById("prompt").setAttribute("style","color:cyan");
                 round_over = true;
                 if(cash<=0){document.getElementById("prompt").innerHTML = "you lost all your money";
                 document.getElementById("prompt").setAttribute("style","color:red");}
@@ -52,7 +52,7 @@ window.onload = function()
                     var btn = document.createElement("h3");
                     btn.setAttribute("style", "height: 2vh; color: white");
                     btn.setAttribute("style", "background-color: cyan");
-                    var btntxt = document.createTextNode("Another round");
+                    var btntxt = document.createTextNode("You Won! Another round?");
                     btn.appendChild(btntxt);
                     nb.appendChild(btn);
                     nb.onclick = function()
@@ -70,8 +70,9 @@ window.onload = function()
             {
                 cash-=5; document.getElementById("cash").innerHTML = cash;
                 
-                document.getElementById("prompt").innerHTML = "Dealer won";
-                document.getElementById("prompt").setAttribute("style","color:red");
+                // document.getElementById("prompt").innerHTML = "Dealer won";
+                // document.getElementById("prompt").setAttribute("style","color:red");
+
                 round_over = true;
                 if(cash<=0){document.getElementById("prompt").innerHTML = "you lost all your money";
                 document.getElementById("prompt").setAttribute("style","color:red");}
@@ -82,8 +83,8 @@ window.onload = function()
                     var nb = document.getElementById("nrb");
                     var btn = document.createElement("h3");
                     btn.setAttribute("style", "height: 2vh; color: white");
-                    btn.setAttribute("style", "background-color: cyan");
-                    var btntxt = document.createTextNode("Another round");
+                    btn.setAttribute("style", "background-color: red");
+                    var btntxt = document.createTextNode("Dealer won! Another round?");
                     btn.appendChild(btntxt);
                     nb.appendChild(btn);
                     nb.onclick = function()
@@ -203,8 +204,8 @@ function get_P_Card()
                 
                 cash-=5; document.getElementById("cash").innerHTML = cash;
 
-                document.getElementById("prompt").innerHTML = "you burned";
-                document.getElementById("prompt").setAttribute("style","color:red");
+                // document.getElementById("prompt").innerHTML = "you burned";
+                // document.getElementById("prompt").setAttribute("style","color:red");
 
                 if(cash<=0){document.getElementById("prompt").innerHTML = "you lost all your money";
                 document.getElementById("prompt").setAttribute("style","color:red");}
@@ -215,8 +216,8 @@ function get_P_Card()
                     var nb = document.getElementById("nrb");
                     var btn = document.createElement("h3");
                     btn.setAttribute("style", "height: 2vh; color: white");
-                    btn.setAttribute("style", "background-color: cyan");
-                    var btntxt = document.createTextNode("Another round");
+                    btn.setAttribute("style", "background-color: red");
+                    var btntxt = document.createTextNode("you burned! Another round?");
                     btn.appendChild(btntxt);
                     nb.appendChild(btn);
                     nb.onclick = function()
