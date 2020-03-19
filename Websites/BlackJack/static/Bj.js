@@ -50,6 +50,7 @@ window.onload = function()
                     console.log("right");
                     var nb = document.getElementById("nrb");
                     var btn = document.createElement("button");
+                    btn.setAttribute("style", "height: 3vh");
                     var btntxt = document.createTextNode("Another round");
                     btn.appendChild(btntxt);
                     nb.appendChild(btn);
@@ -79,6 +80,7 @@ window.onload = function()
                     console.log("right");
                     var nb = document.getElementById("nrb");
                     var btn = document.createElement("button");
+                    btn.setAttribute("style", "height: 3vh");
                     var btntxt = document.createTextNode("Another round");
                     btn.appendChild(btntxt);
                     nb.appendChild(btn);
@@ -210,6 +212,7 @@ function get_P_Card()
                     console.log("right");
                     var nb = document.getElementById("nrb");
                     var btn = document.createElement("button");
+                    btn.setAttribute("style", "height: 3vh");
                     var btntxt = document.createTextNode("Another round");
                     btn.appendChild(btntxt);
                     nb.appendChild(btn);
