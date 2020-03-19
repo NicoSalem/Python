@@ -130,15 +130,15 @@ function get_D_Card()
         if (this.readyState == 4 && this.status == 200)
          {
             var card = JSON.parse(this.responseText);
-            
-            dealerSum += card_value_map.get(card.cards[0].value);
+          
             console.log("dealersum: "+ dealerSum);
             var card_img_src = card.cards[0].image;
             var div = document.getElementById("dealer");
             var new_img = document.createElement("img");
             new_img.setAttribute("style", "height: 20vh; width: 10vw;");
             new_img.setAttribute("src", card_img_src);
-            div.appendChild(new_img);            
+            div.appendChild(new_img);      
+            dealerSum += card_value_map.get(card.cards[0].value);
         }
     };
 
