@@ -49,8 +49,9 @@ window.onload = function()
                 {
                     console.log("right");
                     var nb = document.getElementById("nrb");
-                    var btn = document.createElement("button");
-                    btn.setAttribute("style", "height: 3vh");
+                    var btn = document.createElement("h3");
+                    btn.setAttribute("style", "height: 2vh; color: white");
+                    btn.setAttribute("style", "background-color: cyan");
                     var btntxt = document.createTextNode("Another round");
                     btn.appendChild(btntxt);
                     nb.appendChild(btn);
@@ -79,8 +80,9 @@ window.onload = function()
                 {
                     console.log("right");
                     var nb = document.getElementById("nrb");
-                    var btn = document.createElement("button");
-                    btn.setAttribute("style", "height: 3vh");
+                    var btn = document.createElement("h3");
+                    btn.setAttribute("style", "height: 2vh; color: white");
+                    btn.setAttribute("style", "background-color: cyan");
                     var btntxt = document.createTextNode("Another round");
                     btn.appendChild(btntxt);
                     nb.appendChild(btn);
@@ -211,8 +213,9 @@ function get_P_Card()
                 {
                     console.log("right");
                     var nb = document.getElementById("nrb");
-                    var btn = document.createElement("button");
-                    btn.setAttribute("style", "height: 3vh");
+                    var btn = document.createElement("h3");
+                    btn.setAttribute("style", "height: 2vh; color: white");
+                    btn.setAttribute("style", "background-color: cyan");
                     var btntxt = document.createTextNode("Another round");
                     btn.appendChild(btntxt);
                     nb.appendChild(btn);
