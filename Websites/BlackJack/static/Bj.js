@@ -42,11 +42,25 @@ window.onload = function()
                 document.getElementById("prompt").innerHTML = "you won";
                 document.getElementById("prompt").setAttribute("style","color:cyan");
                 round_over = true;
-                if(cash<=0){alert("you lost all your money");}
-                else if(confirm("You won! Another round?") && cash>0)
+                if(cash<=0){document.getElementById("prompt").innerHTML = "you lost all your money";
+                document.getElementById("prompt").setAttribute("style","color:red");}
+
+                else 
                 {
-                    Clear_for_next_round();
-                    round();
+                    console.log("right");
+                    var nb = document.getElementById("nrb");
+                    var btn = document.createElement("button");
+                    var btntxt = document.createTextNode("Another round");
+                    btn.appendChild(btntxt);
+                    nb.appendChild(btn);
+                    nb.onclick = function()
+                    {
+                        if(round_over==true)
+                        {
+                            Clear_for_next_round();
+                            round();
+                        }
+                    }
                 }
                 
             }
@@ -57,11 +71,25 @@ window.onload = function()
                 document.getElementById("prompt").innerHTML = "Dealer won";
                 document.getElementById("prompt").setAttribute("style","color:red");
                 round_over = true;
-                if(cash<=0){alert("you lost all your money");}
-                else if(confirm("You Lost! Another round?") && cash>0)
+                if(cash<=0){document.getElementById("prompt").innerHTML = "you lost all your money";
+                document.getElementById("prompt").setAttribute("style","color:red");}
+
+                else 
                 {
-                    Clear_for_next_round();
-                    round();
+                    console.log("right");
+                    var nb = document.getElementById("nrb");
+                    var btn = document.createElement("button");
+                    var btntxt = document.createTextNode("Another round");
+                    btn.appendChild(btntxt);
+                    nb.appendChild(btn);
+                    nb.onclick = function()
+                    {
+                        if(round_over==true)
+                        {
+                            Clear_for_next_round();
+                            round();
+                        }
+                    }
                 }
                 
             }
@@ -130,15 +158,14 @@ function get_D_Card()
         if (this.readyState == 4 && this.status == 200)
          {
             var card = JSON.parse(this.responseText);
-          
             console.log("dealersum: "+ dealerSum);
             var card_img_src = card.cards[0].image;
             var div = document.getElementById("dealer");
             var new_img = document.createElement("img");
             new_img.setAttribute("style", "height: 20vh; width: 10vw;");
             new_img.setAttribute("src", card_img_src);
-            div.appendChild(new_img);      
-            dealerSum += card_value_map.get(card.cards[0].value);
+            div.appendChild(new_img);  
+            dealerSum += card_value_map.get(card.cards[0].value);          
         }
     };
 
@@ -158,7 +185,7 @@ function get_P_Card()
             var card = JSON.parse(this.responseText);
             playerSum += card_value_map.get(card.cards[0].value);
 
-            if(playerSum >21)
+            if(playerSum > 21)
             {
                 round_over = true;
                 console.log("playersum: "+playerSum);
@@ -171,13 +198,29 @@ function get_P_Card()
                 div.appendChild(new_img);
                 
                 cash-=5; document.getElementById("cash").innerHTML = cash;
+
                 document.getElementById("prompt").innerHTML = "you burned";
                 document.getElementById("prompt").setAttribute("style","color:red");
-                if(cash<=0){alert("you lost all your money");}
-                else if(confirm("You burned! Another round?") && cash>0)
+
+                if(cash<=0){document.getElementById("prompt").innerHTML = "you lost all your money";
+                document.getElementById("prompt").setAttribute("style","color:red");}
+                
+                else 
                 {
-                    Clear_for_next_round();
-                    round();
+                    console.log("right");
+                    var nb = document.getElementById("nrb");
+                    var btn = document.createElement("button");
+                    var btntxt = document.createTextNode("Another round");
+                    btn.appendChild(btntxt);
+                    nb.appendChild(btn);
+                    nb.onclick = function()
+                    {
+                        if(round_over==true)
+                        {
+                            Clear_for_next_round();
+                            round();
+                        }
+                    }
                 }
                 
             }
@@ -223,6 +266,7 @@ function Clear_for_next_round()
         child = ddiv.lastElementChild; 
     } 
     var p = document.getElementById("prompt").innerHTML = "";
+    document.getElementById("nrb").removeChild(document.getElementById("nrb").lastElementChild);
     
     round_over = false;
 }
